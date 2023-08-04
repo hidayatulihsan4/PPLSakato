@@ -1,0 +1,5 @@
+select transaksi.*, user_customer.*, produk.id as kd_produk, produk.nama as nama_produk, produk.harga as harga_produk, produk.foto_produk as foto_produk, produk.keterangan as keterangan_produk, pemesanan.jumlah, pemesanan.tgl as tgl_pemesanan 
+from transaksi, pemesanan, produk, user_customer  
+where transaksi.kd_pemesanan = pemesanan.kd_pemesanan 
+AND pemesanan.id_customer = user_customer.id 
+AND pemesanan.kd_produk = produk.id;
